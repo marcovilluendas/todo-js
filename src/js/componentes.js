@@ -38,7 +38,6 @@ txtInput.addEventListener('keyup', (event) => {
         const nuevoTodo = new Todo(txtInput.value);
 
         todoList.nuevoTodo(nuevoTodo);
-        console.log(todoList);
 
         crearTodoHtml(nuevoTodo);
         txtInput.value = '';
@@ -53,7 +52,6 @@ divTodoList.addEventListener('click', (event) => {
     const todoElemento = event.target.parentElement.parentElement;
     const todoId = todoElemento.getAttribute('data-id');
 
-    console.log(nombreElemento);
 
     if (nombreElemento.includes('input')) { // Click en el check
         todoList.marcarCompletado(todoId);
@@ -95,7 +93,7 @@ ulFilters.addEventListener('click', (event) => {
     };
 
     anchorFiltros.forEach(elem => elem.classList.remove('selected'));
-    console.log(event.target);
+
     event.target.classList.add('selected');
 
     for (const elemento of divTodoList.children) {
